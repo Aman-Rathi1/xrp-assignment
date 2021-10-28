@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: xrp_node
+  name: xrp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xrp_node
+  template:
+    metadata:
+      labels:
+        app: xrp_node
+    spec:
+      containers:
+      - image: amanrathi1/xrp-ripple
+        name: xrp-ripple
+
